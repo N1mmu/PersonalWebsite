@@ -1,24 +1,5 @@
-div.header {
-  position: relative;
-  font-size: 31.25px;
-  font-family: "sans-serif";
-  text-align: left;
-  /* text-decoration-color: plum; */
-  padding: 20px;
-  color: #ffffff;
-}
-
-img.logo {
-  position: relative;
-  width: 62.5px;
-}
-
-p.header {
-  display: inline;
-  position: relative;
-  font-weight: bold;
-  vertical-align: 50%;
-}
+@import url("peacenix.css");
+@import url("common.css");
 
 nav {
   display: flex;
@@ -37,6 +18,10 @@ ul.header {
   vertical-align: 50%;
 }
 
+body {
+  background-color: black;
+}
+
 .header li {
   padding: 0 8%;
   list-style: none;
@@ -50,9 +35,12 @@ ul.header {
 
 #bgv {
   position: fixed;
+  display: none;
   vertical-align: center;
   min-width: 100%;
   min-height: 100%;
+  left: 0px;
   bottom: -200px;
   justify-content: center;
+  overflow: hidden;
 }

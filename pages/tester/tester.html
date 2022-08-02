@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"/>
+<html>
+    <head>
+        <title>Tester</title> 
+        <link rel="stylesheet" href="../../style/tester.css">
+    </head>
+    <body>
+        <img src="/pages/tester/gfx/background.gif" id="bgp">
+    <div class="header">
+    <div class="header_container"></div>
+    <div class="header_positioned">
+      <a href="../../index.html">
+      <img src="/gfx/pheonix.png" alt="Logo" class="logo">
+      <p class="header">Peacenix</p></a>
+    </div>
+    </div>
+  </div>
+
+<div class="content">
+  <div class="test">
+    <center>
+    <p class="test" id="test">TEST</p>
+    </center>
+    <div class="test_buttons" id="test_buttons">
+    <button type="button" class="test_button_common" id="font" onclick="font()">FONT</button>
+    <button type="button" class="test_button_common" id="color" onclick="color()">COLOR</button>
+    <button type="button" class="test_button_common" id="hide" onclick="hide()">HIDE</button>
+    <button type="button" class="test_button_common" id="lock" onclick="lock()">LOCK</button>
+    <button type="button" class="test_button_common" id="reset" onclick="reset()">RESET</button>
+    </div>
+    <div class="test_buttons_disabled" id="test_buttons_disabled">
+      <button type="button" class="test_button_common_disabled" id="font">FONT</button>
+      <button type="button" class="test_button_common_disabled" id="color">COLOR</button>
+      <button type="button" class="test_button_common_disabled" id="hide">HIDE</button>
+      <button type="button" class="test_button_common" id="lock" onclick="lock()">UNLOCK</button>
+      <button type="button" class="test_button_common" id="reset" onclick="reset()">RESET</button>
+      </div>
+  </div>
+</div>
+<script src="../../script/tester.js"></script>
+    </body>
+</html>

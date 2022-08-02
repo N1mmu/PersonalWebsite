@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+    <head>
+    <link rel="stylesheet" href="/style/music.css">
+    <title>Music Player</title>
+    </head>
+    <body>
+        <audio class = "song" src="gfx/Musics/Faded.mp3" id="song" onended="endedSong()"></audio>
+        <img src="gfx/banner.jpg" id="bgp">
+        <div class="app">
+        <div class="logo_and_banner">
+        <div class="logo">
+            <a href="/index.html">
+            <img src="/gfx/Pheonix.png" id="logo">
+        </a>
+        
+        </div>
+        <!-- <div class="banner">
+            <img src="/pages/music/gfx/banner.jpg" id="banner">
+        </div> -->
+    </div>
+      <div class="mid">
+        <div class="playlist">
+            <p>playlist</p>
+            <br>
+            <div class="playlist_song_queue">
+                <div class="song_in_queue" onclick="clickSong()">
+                <img src="gfx/music icons/alan-walker-faded-paul-husen.jpg"  class="playlist_img" id="playlist_img_1">
+                <p class="play" id="playButton_p1"> &#9658;</p>
+                <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
+                <p class="song_name">Faded</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="feed"></div>
+        </div>
+    </div>
+
+    <script src="/script/music.js"></script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="moviesxml.css"?>
+<movies>
+    <action>
+        <name>Doctor strange in the multiverse of madness</name>
+        <path>gfx/doctor-strange.jpg</path>
+    </action>
+    <action>
+        <name>Deadpool 2</name>
+        <path></path>
+    </action>
+</movies>
