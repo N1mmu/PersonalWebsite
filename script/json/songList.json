@@ -1,0 +1,18 @@
+[
+    {
+    "name": "Faded",
+    "src": "gfx/Musics/Faded.mp3",
+    "icon": "gfx/music icons/Faded.jpg",
+    "genre": "pop",
+    "language": "english",
+    "recomendation": 1
+        },
+    {
+        "name": "Alone",
+        "src": "gfx/Musics/Alone.mp3",
+        "icon": "gfx/music icons/Alone.png",
+        "genre": "pop",
+        "language": "english",
+        "recomendation": 1
+        }
+]

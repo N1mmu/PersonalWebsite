@@ -3,6 +3,7 @@
 <html>
     <head>
     <link rel="stylesheet" href="/style/music.css">
+    <link rel="icon" type="image/x-icon" href="gfx/favicon.ico">
     <title>Music Player</title>
     </head>
     <body>
@@ -21,15 +22,15 @@
         </div> -->
     </div>
       <div class="mid">
-        <div class="playlist">
+        <div class="playlist" onload="songSelection()">
             <p>playlist</p>
             <br>
             <div class="playlist_song_queue">
-                <div class="song_in_queue" onclick="clickSong()">
-                <img src="gfx/music icons/alan-walker-faded-paul-husen.jpg"  class="playlist_img" id="playlist_img_1">
+                <div class="song_in_queue" onclick="clickSong(songList)">
+                <img src="gfx/music icons/faded.jpg"  class="playlist_img" id="playlist_img_1">
                 <p class="play" id="playButton_p1"> &#9658;</p>
                 <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
-                <p class="song_name">Faded</p>
+                <p class="song_name" id="song_name_1">Faded</p>
                 </div>
             </div>
         </div>
@@ -37,7 +38,10 @@
         <div class="feed"></div>
         </div>
     </div>
-
-    <script src="/script/music.js"></script>
+    <div class="controller">
+        
+    </div>
+    <!-- <script type="module" src="/script/musicImport.js"></script> -->
+    <script type="import" src="/script/music.js"></script>
     </body>
 </html>
