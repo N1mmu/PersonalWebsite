@@ -50,9 +50,10 @@ div.banner{
     height: 100%;
 } */
 div.playlist{
-    position: absolute;
-    height: 600px;
-    width: 350px;
+    position: fixed;
+    min-width: 275px;
+    height: 62.5%;
+    width: 18%;
     padding: 2%;
     margin: 30px 0px 0px 20px;
     border-radius: 7px;
@@ -62,16 +63,6 @@ div.playlist{
 div.playlist p{
     font-family: 'Courier New';
     font-weight: bolder;
-}
-
-.feed{
-    position: relative;
-    height: 680px;
-    width: 1459px;
-    top: 30px;
-    left: 450px;
-    border-radius: 10px;
-    background-color: rgba(205, 190, 255, 0.8);
 }
 
 img.playlist_img{
@@ -90,7 +81,7 @@ img.playlist_img{
 
 .song_in_queue p.song_name{
     font-family: sans-serif;
-    position: absolute;
+    position: fixed;
     padding-left: 70px;
     font-weight: normal;
 }
@@ -120,10 +111,21 @@ img.playlist_img{
 }
 
 div.controller{
-    position: absolute;
+    position: fixed;
     min-width: 99.2%;
     height: 125px;
     background-color:  rgba(206, 246, 152,0.79) ;
-    bottom: 20px;
+    bottom: 1%;
     border-radius: 5px;
 }
+
+.feed{
+    position: fixed;
+    height: 680px;
+    width: 1459px;
+    bottom: 147px;
+    left: 460px;
+    border-radius: 10px;
+    background-color: rgba(205, 190, 255, 0.8);
+}
+

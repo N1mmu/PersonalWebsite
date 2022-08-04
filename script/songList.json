@@ -1,0 +1,133 @@
+[
+    {
+        "song_id": 1,
+    "name": "Faded",
+    "src": "gfx/Musics/Faded.mp3",
+    "icon": "gfx/music icons/Faded.jpg",
+    "genre": "pop",
+    "artist": ["Alan Walker"],
+    "language": "english",
+    "recomendation": 1
+        },
+    {
+        "song_id": 2,
+        "name": "Alone",
+        "src": "gfx/Musics/Alone.mp3",
+        "icon": "gfx/music icons/Alone.png",
+        "genre": "pop",
+        "artist": ["Alan Walker"],
+        "language": "english",
+        "recomendation": 1
+        },
+        {
+            "song_id": 3,
+            "name": "On my way",
+            "src": "gfx/Musics/On my way.mp3",
+            "icon": "gfx/music icons/On_My_Way.png",
+            "genre": "pop",
+            "artist": ["Alan Walker"],
+            "language": "english",
+            "recomendation": 1
+        },
+            {
+                "song_id": 4,
+                "name": "The Spectre",
+                "src": "gfx/Musics/The Spectre.mp3",
+                "icon": "gfx/music icons/The Spectre.jpg",
+                "genre": "pop",
+                "artist": ["Alan Walker"],
+                "language": "english",
+                "recomendation": 1
+                },
+                {
+                    "song_id": 5,
+                    "name": "Attention",
+                    "src": "gfx/Musics/Attention.mp3",
+                    "icon": "gfx/music icons/attention.jpg",
+                    "genre": "pop",
+                    "artist": ["Charlie Puth"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 6,
+                    "name": "See you again",
+                    "src": "gfx/Musics/See You Again.mp3",
+                    "icon": "gfx/music icons/See You Again.png",
+                    "genre": "pop",
+                    "artist": ["Charlie Puth","Wiz Khalifa"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 7,
+                    "name": "Heroes Tonight",
+                    "src": "gfx/Musics/Heroes Tonight.mp3",
+                    "icon": "gfx/music icons/Heroes Tonight.jpg",
+                    "genre": "pop",
+                    "artist": ["Janji","Johnning"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 8,
+                    "name": "Close to the sun",
+                    "src": "gfx/Musics/Close To The Sun.mp3",
+                    "icon": "gfx/music icons/Close To The Sun.jpg",
+                    "genre": "pop",
+                    "artist": ["TheFatRat","Anjulie"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 9,
+                    "name": "Rise",
+                    "src": "gfx/Musics/Rise.mp3",
+                    "icon": "gfx/music icons/Rise.jpg",
+                    "genre": "pop",
+                    "artist": ["League Of Legends"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 10,
+                    "name": "On & On",
+                    "src": "gfx/Musics/On & On.mp3",
+                    "icon": "gfx/music icons/On & On.jpg",
+                    "genre": "pop",
+                    "artist": ["Cartoon"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 11,
+                    "name": "Hymn For The Weekend",
+                    "src": "gfx/Musics/Hymn For The Weekend.mp3",
+                    "icon": "gfx/music icons/Hymn For The Weekend.jpg",
+                    "genre": "pop",
+                    "artist": ["Coldplay"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 12,
+                    "name": "Cradles",
+                    "src": "gfx/Musics/Cradles.mp3",
+                    "icon": "gfx/music icons/Cradles.jpg",
+                    "genre": "pop",
+                    "artist": ["Suburban"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 13,
+                    "name": "Something Just Like This",
+                    "src": "gfx/Musics/Something Just Like This.mp3",
+                    "icon": "gfx/music icons/Something Just Like This.png",
+                    "genre": "pop",
+                    "artist": ["Suburban"],
+                    "language": "english",
+                    "recomendation": 1
+                }
+                
+]

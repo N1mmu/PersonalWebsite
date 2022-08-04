@@ -4,6 +4,7 @@
     <head>
     <link rel="stylesheet" href="/style/music.css">
     <link rel="icon" type="image/x-icon" href="gfx/favicon.ico">
+    <script src="/node_modules/browser-cjs/require.js"></script>
     <title>Music Player</title>
     </head>
     <body>
@@ -26,22 +27,85 @@
             <p>playlist</p>
             <br>
             <div class="playlist_song_queue">
-                <div class="song_in_queue" onclick="clickSong(songList)">
-                <img src="gfx/music icons/faded.jpg"  class="playlist_img" id="playlist_img_1">
+                <div class="song_in_queue" id="playlist_song_1">
+                <img src=""  class="playlist_img" id="playlist_img_1">
                 <p class="play" id="playButton_p1"> &#9658;</p>
                 <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
-                <p class="song_name" id="song_name_1">Faded</p>
-                </div>
+                <p class="song_name" id="song_name_1">Undefined</p>
+            </div>
+                
+            
+            <div class="playlist_song_queue">
+                <div class="song_in_queue" id="playlist_song_2">
+                <img src=""  class="playlist_img" id="playlist_img_2">
+                <p class="play" id="playButton_p1"> &#9658;</p>
+                <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
+                <p class="song_name" id="song_name_2">Undefined</p>
+            </div>
+
+
+            <div class="playlist_song_queue">
+                <div class="song_in_queue" id="playlist_song_3">
+                <img src=""  class="playlist_img" id="playlist_img_3">
+                <p class="play" id="playButton_p1"> &#9658;</p>
+                <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
+                <p class="song_name" id="song_name_3">Undefined</p>
+            </div>
+
+
+            <div class="playlist_song_queue">
+                <div class="song_in_queue" id="playlist_song_4">
+                <img src=""  class="playlist_img" id="playlist_img_4">
+                <p class="play" id="playButton_p1"> &#9658;</p>
+                <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
+                <p class="song_name" id="song_name_4">Undefined</p>
+            </div>
+
+
+            <div class="playlist_song_queue">
+                <div class="song_in_queue" id="playlist_song_5">
+                <img src=""  class="playlist_img" id="playlist_img_5">
+                <p class="play" id="playButton_p1"> &#9658;</p>
+                <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
+                <p class="song_name" id="song_name_5">Undefined</p>
+            </div>
+            
+            <div class="playlist_song_queue">
+                <div class="song_in_queue" id="playlist_song_5">
+                <img src=""  class="playlist_img" id="playlist_img_5">
+                <p class="play" id="playButton_p1"> &#9658;</p>
+                <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
+                <p class="song_name" id="song_name_6">Undefined</p>
+            </div>
+
+            <div class="playlist_song_queue">
+                <div class="song_in_queue" id="playlist_song_5">
+                <img src=""  class="playlist_img" id="playlist_img_5">
+                <p class="play" id="playButton_p1"> &#9658;</p>
+                <p class="pause" id="pauseButton_p1">&#9612;&#9612;</p>
+                <p class="song_name" id="song_name_7">Undefined</p>
+            </div>
+
             </div>
         </div>
 
-        <div class="feed"></div>
+
+
+
+
+        <div class="feed">
+
+        <div class="feed_type">
+            <p class="feed_name">Suggested</p>
+        </div>
+    </div>
         </div>
     </div>
     <div class="controller">
         
     </div>
     <!-- <script type="module" src="/script/musicImport.js"></script> -->
-    <script type="import" src="/script/music.js"></script>
+    <!-- <script src="/script/music.js"></script> -->
+    <script src="/script/bundle.js"></script>
     </body>
 </html>

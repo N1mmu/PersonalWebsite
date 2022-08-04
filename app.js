@@ -1,19 +1,27 @@
-// Requiring module
-const express = require('express');
- 
-// Creating express object
-const app = express();
- 
-// Handling GET request
-app.get('/', (req, res) => {
-    res.send('A simple Node App is '
-        + 'running on this server')
-    res.end()
+"use strict";
+
+const { response } = require('express');
+const http = require('http');
+const fs = require('fs');
+const port = 5000;
+
+const server = http.createServer(function(req,res){
+    res.writeHead(200,{'Content-Type': 'text/html'})
+    fs.readFile('./index.html', function(error, data){
+        if(error){
+            res.writeHead(404);
+            res.write('Error: File Not Found');
+        }else{
+            res.write(data)
+        }
+        res.end();
+    })
 })
- 
-// Port Number
-const PORT = process.env.PORT ||5000;
- 
-// Server Setup
-app.listen(PORT,console.log(
-  `Server started on port ${PORT}`));
+
+server.listen(port, function(error){
+    if(error){
+        console.log(error);
+    }else{
+        console.log("server is listening on port "+port);
+    }
+})
