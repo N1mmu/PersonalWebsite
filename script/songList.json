@@ -125,7 +125,7 @@
                     "src": "gfx/Musics/Something Just Like This.mp3",
                     "icon": "gfx/music icons/Something Just Like This.png",
                     "genre": "pop",
-                    "artist": ["Suburban"],
+                    "artist": ["The Chainsmokers","Coldplay"],
                     "language": "english",
                     "recomendation": 1
                 }
