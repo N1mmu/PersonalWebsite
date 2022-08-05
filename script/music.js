@@ -11,7 +11,7 @@ const songList= require('./songList.json');
 //infos that wont change
 
 const noOfSongs = songList.length;
-const noOfPlayElements = 7;
+const noOfPlayElements = 12;
 
 // playlist
 
@@ -23,122 +23,200 @@ const playlist1_playButton = document.getElementById("playButton_p1");
 const playlist1_pauseButton = document.getElementById("pauseButton_p1");
 
 
-var songPathPlaylist=[];
-var currentSongPort=1;
+var playlistSongArr=[];
+var feedSongArr=[];
+var playlistCurrentSongPort=1;
+var feedCurrentSongPort=-1;
 var currentSong = 0;
+var port;
 var songNo_click;
-var songLoaded_playlist=[];
+var songLoaded_feed=[];
 var songAlreadyLoaded=false;
 
 
-const songChange = function(loc,songNo){
-    songLoaded_playlist[loc]=songNo;
-        document.getElementsByClassName('playlist_img')[loc].src = songList[songNo].icon;
-        songPathPlaylist[loc]= songList[songNo].src;
-        document.getElementsByClassName('song_name')[loc].innerHTML = songList[songNo].name;
+const songChange = function(port,songNo,imgClass,songNameClass){
+        document.getElementsByClassName(imgClass)[port].src = songList[songNo].icon;
+        document.getElementsByClassName(songNameClass)[port].innerHTML = songList[songNo].name;
+        return songList[songNo].src;
 }
 
 
 
-const songSelection = function(){
-    for(i=0;i<noOfPlayElements;i++){
-        var songNo=Math.floor(Math.random()*noOfSongs);
+const songSelection = function(i,songLoadedList){
+        let songNo=Math.floor(Math.random()*noOfSongs);
         while(true){
             for(j=0;j<i;j++){
-            if(songLoaded_playlist[j]==songNo){
+            if(songLoadedList[j]==songNo){
             songNo=(songNo+1)%noOfSongs;
             break;
             }
-        
         }
         if(j==i) break
     }
-        songChange(i,songNo);
-    }
+    return songNo;
 
 }
 
 // post load function
 
 document.addEventListener("DOMContentLoaded",function(){
-    songSelection();
+    for(i=0;i<13-1;i++){
+    songLoaded_feed[i]=songSelection(i,songLoaded_feed);
+    feedSongArr[i]=songChange(i,songLoaded_feed[i],'feed_song_image','feed_song_name');
+    }
 });
 
 
-const playSong = function(num){
-    document.getElementById('song').src= songPathPlaylist[num];
+
+const playSong = function(num, playClass,pauseClass,currentSongPort,songListArr){
+        document.getElementById('song').src= songListArr[num];
         play.play()
-        currentSongPort = num;
-        document.getElementsByClassName('play')[num].style.display = "none";
-        document.getElementsByClassName('pause')[num].style.display = "block";
+        port = num;
+        document.getElementsByClassName(playClass)[num].style.display = "none";
+        document.getElementsByClassName(pauseClass)[num].style.display = "block";
 }
 
 
-const clickSong = function(num){
+const clickSong = function(num, playClass,pauseClass,currentSongPort,songListArr){
     if(currentSongPort>=0 && currentSongPort!=num){
         play.pause()
-        document.getElementsByClassName('play')[currentSongPort].style.display = "block";
-        document.getElementsByClassName('pause')[currentSongPort].style.display = "none";
-        playSong(num);
+        if(currentSongPort!=-1)
+        {
+            document.getElementsByClassName(playClass)[currentSongPort].style.display = "block";
+        document.getElementsByClassName(pauseClass)[currentSongPort].style.display = "none";
+    }
+        playSong(num, playClass,pauseClass,currentSongPort,songListArr);
 }
 else  if (currentSongPort==num){
     // console.log("paused");
         play.pause()
-        document.getElementsByClassName('play')[num].style.display = "block";
-        document.getElementsByClassName('pause')[num].style.display = "none";
+        document.getElementsByClassName(playClass)[num].style.display = "block";
+        document.getElementsByClassName(pauseClass)[num].style.display = "none";
         currentSong = currentSongPort;
-        currentSongPort=-1;
+        port=-1;
 
 }else if(currentSongPort==-1){
     // console.log("replayed");
     if(currentSong==num){
     play.play()
-    document.getElementsByClassName('play')[num].style.display = "none";
-    document.getElementsByClassName('pause')[num].style.display = "block";
-    currentSongPort=num;
+    document.getElementsByClassName(playClass)[num].style.display = "none";
+    document.getElementsByClassName(pauseClass)[num].style.display = "block";
+    port=num;
 }else{
-    playSong(num);
+    playSong(num, playClass,pauseClass,currentSongPort,songListArr);
 }
 }
 }
 
 const endedSong = function(){
-    document.getElementsByClassName('play')[currentSongPort].style.display = "block";
-    document.getElementsByClassName('pause')[currentSongPort].style.display = "none";
-    let num=currentSongPort;
+    document.getElementsByClassName('feed_play')[feedCurrentSongPort].style.display = "block";
+    document.getElementsByClassName('feed_pause')[feedCurrentSongPort].style.display = "none";
+    feedCurrentSongPort++;
+    let num=feedCurrentSongPort;
     // currentSong = 0;
-    playSong((num+1)%noOfPlayElements);
+    playSong(num%noOfPlayElements,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
 }
 
-document.getElementById("song_name_1").addEventListener("click", function(){
-    songNo_click=0;
-    clickSong(0);
-});
-document.getElementById("song_name_2").addEventListener("click", function(){
-    songNo_click=1;
-    clickSong(1);
-});
-document.getElementById("song_name_3").addEventListener("click", function(){
-    songNo_click=2;
-    clickSong(2);
-});
-document.getElementById("song_name_4").addEventListener("click", function(){
-    songNo_click=3;
-    clickSong(3);
-});
-document.getElementById("song_name_5").addEventListener("click", function(){
-    songNo_click=4;
-    clickSong(4)
-});
-document.getElementById("song_name_6").addEventListener("click", function(){
-    songNo_click=5;
-    clickSong(5)
-});
-document.getElementById("song_name_7").addEventListener("click", function(){
-    songNo_click=6;
-    clickSong(6)
-});
+
+// document.getElementById("song_name_1").addEventListener("click", function(){
+//     songNo_click=0;
+//     clickSong(0,'play','pause',playlistCurrentSongPort,playlistSongArr);
+//     playlistCurrentSongPort = port;
+// });
+// document.getElementById("song_name_2").addEventListener("click", function(){
+//     songNo_click=1;
+//     clickSong(1,'play','pause',playlistCurrentSongPort,playlistSongArr);
+//     playlistCurrentSongPort = port;
+// });
+// document.getElementById("song_name_3").addEventListener("click", function(){
+//     songNo_click=2;
+//     clickSong(2,'play','pause',playlistCurrentSongPort,playlistSongArr);
+//     playlistCurrentSongPort = port;
+// });
+// document.getElementById("song_name_4").addEventListener("click", function(){
+//     songNo_click=3;
+//     clickSong(3,'play','pause',playlistCurrentSongPort,playlistSongArr);
+//     playlistCurrentSongPort = port;
+// });
+// document.getElementById("song_name_5").addEventListener("click", function(){
+//     songNo_click=4;
+//     clickSong(4,'play','pause',playlistCurrentSongPort,playlistSongArr);
+//     playlistCurrentSongPort = port;
+// });
+// document.getElementById("song_name_6").addEventListener("click", function(){
+//     songNo_click=5;
+//     clickSong(5,'play','pause',playlistCurrentSongPort,playlistSongArr);
+//     playlistCurrentSongPort = port;
+// });
+// document.getElementById("song_name_7").addEventListener("click", function(){
+//     songNo_click=6;
+//     clickSong(6,'play','pause',playlistCurrentSongPort,playlistSongArr);
+//     playlistCurrentSongPort = port;
+// });
 
 play.addEventListener('ended', function(){
     endedSong();
 })
+
+
+document.getElementsByClassName("feed_song")[0].addEventListener("click", function(){
+    songNo_click=0;
+    clickSong(0,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[1].addEventListener("click", function(){
+    songNo_click=1;
+    clickSong(1,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[2].addEventListener("click", function(){
+    songNo_click=2;
+    clickSong(2,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[3].addEventListener("click", function(){
+    songNo_click=3;
+    clickSong(3,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[4].addEventListener("click", function(){
+    songNo_click=4;
+    clickSong(4,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[5].addEventListener("click", function(){
+    songNo_click=5;
+    clickSong(5,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[6].addEventListener("click", function(){
+    songNo_click=6;
+    clickSong(6,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[7].addEventListener("click", function(){
+    songNo_click=7;
+    clickSong(7,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[8].addEventListener("click", function(){
+    songNo_click=8;
+    clickSong(8,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[9].addEventListener("click", function(){
+    songNo_click=9;
+    clickSong(9,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[10].addEventListener("click", function(){
+    songNo_click=10;
+    clickSong(10,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+document.getElementsByClassName("feed_song")[11].addEventListener("click", function(){
+    songNo_click=11;
+    clickSong(11,'feed_play','feed_pause',feedCurrentSongPort,feedSongArr);
+    feedCurrentSongPort = port;
+});
+
