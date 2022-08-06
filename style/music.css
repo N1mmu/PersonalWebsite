@@ -1,12 +1,21 @@
 @import url("common.css");
 
+
 body{
     background-color: black;
 }
 
+.screen{
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
 .app{
     width: 95%;
     height: 95%;
+    left: 0;
+    right: 0;
     border-color: #850000;
     border-width: 2px;
     
@@ -14,18 +23,18 @@ body{
 
 .logo_and_banner{
     width: 100%;
-    height: 100px;
+    height: 10%;
 
 }
 
 .logo{
     position: absolute;
-    height: 80px;
-    width: 80px;
-    padding: 10px;
-    margin: 10px;
+    height: 9%;
+    width: 4%;
+    padding: 0.3%;
+    margin: 0.3%;
     /* background-color: #535353; */
-    border-radius: 9px;
+    border-radius: 2%;
 }
 .logo a{
     width: 100%;
@@ -38,7 +47,7 @@ body{
 
 div.banner{
     position: absoulte;
-    top: 1px;
+    top: 1%;
     height: 100%;
     width: 100%;
     background-color: #f7d4d4;
@@ -51,25 +60,31 @@ div.banner{
 } */
 div.playlist{
     position: fixed;
-    min-width: 275px;
+    min-width: 18.5%;
     height: 62.5%;
-    width: 18%;
+    width: 10%;
     padding: 2%;
-    margin: 30px 0px 0px 20px;
+    top: 10.3%;
+    margin-top: 2% ;
+    margin-left: 0.5%;
     border-radius: 7px;
     background-color: rgba(50,188,200,0.8);
 }
-
-div.playlist p{
-    font-family: 'Courier New';
-    font-weight: bolder;
+div.title{
+    font-family: sans-serif;
+    font-size: 1.1vw;
+    max-width:20%;
+    max-height: 10%;
+    /* background-color: #850000; */
 }
+
 
 img.playlist_img{
     position: relative;
-    padding-left: 10px ;
-    width: 50px;
-    height: 50px;
+    padding-top: 1%;
+    padding-left: 2% ;
+    width: 15%;
+    height: 15%;
     
 }
 
@@ -82,8 +97,10 @@ img.playlist_img{
 
 .song_in_queue p.song_name{
     font-family: sans-serif;
-    position: fixed;
-    padding-left: 70px;
+    position: absolute;
+    top: 18%;
+    left: 17%;
+    padding-left: 4%;
     font-weight: normal;
 }
 
@@ -134,7 +151,7 @@ img.playlist_img{
 div.controller{
     position: fixed;
     min-width: 99.2%;
-    height: 125px;
+    height: 13%;
     background-color:  rgba(206, 246, 152,0.79) ;
     bottom: 1%;
     border-radius: 5px;
@@ -142,15 +159,16 @@ div.controller{
 
 .feed{
     position: fixed;
-    height: 680px;
-    width: 1459px;
-    bottom: 147px;
-    left: 460px;
-    border-radius: 10px;
+    height: 70.5%;
+    width: 75.2%;
+    bottom: 15.2%;
+    left: 24.5%;
+    border-radius: 5px;
     background-color: rgba(205, 190, 255, 0.8);
 }
 
 .feed p.title{
+    font-size: 1vw;
     padding-left: 2%;
     padding-top: 1%;
 }
@@ -159,19 +177,19 @@ div.controller{
 .feed_song_container{
     position: absolute;
     display: inline-flex;
-    width: 320%;
-    height: 100px;
-    top: 65px;
-    left: 500px;
+    width: 70%;
+    height: 10%;
+    top: 20%;
+    left: 26%;
     /* background-color: aqua; */
 }
 
 .feed_song{
     position: relative;
     padding-right: 3%;
-    width: 62px;
-    height: 62px;
-    /* background-color: aqua; */
+    width: 5%;
+    height: 90%;
+    /* background-color: rgb(0, 0, 0); */
     top: 10px;
     left: 10px;
 }
@@ -185,16 +203,16 @@ div.controller{
 }
 
 .feed_song:hover .feed_play{
-    top: -22%;
-    left: 30%;
-    font-size: 32px;
+    top: -22.5%;
+    left: 22%;
+    font-size: 2vw;
     
 }
 
 .feed_song:hover .feed_pause{
-    top: 2%;
-    left: 27%;
-    font-size: 20px;
+    top: 6%;
+    left: 26%;
+    font-size: 1.1vw;
     
 }
 
@@ -205,9 +223,9 @@ div.controller{
 .feed_play{
     position: absolute;
     display: block;
-    left: 25%;
-    top: -15.5%;
-    font-size: 25px;
+    left: 20.5%;
+    top: -13%;
+    font-size: 1.5vw;
     color: #f7d4d4;
     opacity: 0.9;
 }
@@ -217,13 +235,13 @@ div.controller{
     display: none;
     left: 25%;
     top: 10%;
-    font-size: 15px;
+    font-size: 0.8vw;
     color: #f7d4d4;
     opacity: 0.9;
 }
 
 .feed_song_name{
-    font-size: 12px;
+    font-size: 0.63vw;
     font-family: sans-serif;
     margin-top: 0;
     text-align: center;
