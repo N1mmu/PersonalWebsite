@@ -125,7 +125,17 @@
                     "src": "gfx/Musics/Something Just Like This.mp3",
                     "icon": "gfx/music icons/Something Just Like This.png",
                     "genre": "pop",
-                    "artist": ["Suburban"],
+                    "artist": ["The Chainsmokers","Coldplay"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 14,
+                    "name": "Changes",
+                    "src": "gfx/Musics/Changes.mp3",
+                    "icon": "gfx/music icons/Changes.png",
+                    "genre": "pop",
+                    "artist": ["XXXTentacion"],
                     "language": "english",
                     "recomendation": 1
                 }
