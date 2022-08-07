@@ -34,9 +34,11 @@ var songLoaded_feed=[];
 var songAlreadyLoaded=false;
 
 
+
 const songChange = function(port,songNo,imgClass,songNameClass){
+        let nameElement = document.getElementsByClassName(songNameClass)[port];
         document.getElementsByClassName(imgClass)[port].src = songList[songNo].icon;
-        document.getElementsByClassName(songNameClass)[port].innerHTML = songList[songNo].name;
+        nameElement.innerHTML = songList[songNo].name;
         return songList[songNo].src;
 }
 
@@ -78,7 +80,8 @@ const playSong = function(num, playClass,pauseClass,currentSongPort,songListArr)
 
 
 const clickSong = function(num, playClass,pauseClass,currentSongPort,songListArr){
-    if(currentSongPort>=0 && currentSongPort!=num){
+    if(currentSongPort>=-1 && currentSongPort!=num){
+        console.log("played");
         play.pause()
         if(currentSongPort!=-1)
         {
@@ -88,15 +91,15 @@ const clickSong = function(num, playClass,pauseClass,currentSongPort,songListArr
         playSong(num, playClass,pauseClass,currentSongPort,songListArr);
 }
 else  if (currentSongPort==num){
-    // console.log("paused");
+    console.log("paused");
         play.pause()
         document.getElementsByClassName(playClass)[num].style.display = "block";
         document.getElementsByClassName(pauseClass)[num].style.display = "none";
         currentSong = currentSongPort;
-        port=-1;
+        port=-2;
 
-}else if(currentSongPort==-1){
-    // console.log("replayed");
+}else if(currentSongPort==-2){
+    console.log("replayed");
     if(currentSong==num){
     play.play()
     document.getElementsByClassName(playClass)[num].style.display = "none";

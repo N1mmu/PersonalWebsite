@@ -218,6 +218,7 @@ div.controller{
 
 .feed_song_image{
     width: 100%;
+    user-select: none;
 }
 
 .feed_play{
@@ -228,6 +229,7 @@ div.controller{
     font-size: 1.5vw;
     color: #f7d4d4;
     opacity: 0.9;
+    user-select: none;
 }
 
 .feed_pause{
@@ -238,14 +240,18 @@ div.controller{
     font-size: 0.8vw;
     color: #f7d4d4;
     opacity: 0.9;
+    user-select: none;
 }
 
 .feed_song_name{
+    display: block;
     font-size: 0.63vw;
     font-family: sans-serif;
     margin-top: 0;
     text-align: center;
     overflow: hidden;
     white-space: pre;
+    user-select: none;
     text-overflow: ellipsis;
 }
+
