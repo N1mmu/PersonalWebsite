@@ -179,9 +179,27 @@ div.controller{
     display: inline-flex;
     width: 70%;
     height: 10%;
+    
+    /* background-color: aqua; */
+}
+
+#Suggestion{
     top: 20%;
     left: 26%;
-    /* background-color: aqua; */
+}
+
+#KPOP{
+    top: 34%;
+    display: none;
+    left: 26.4%;
+    position: absolute;;
+}
+
+#KPOP_title{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 26.2%;
 }
 
 .feed_song{

@@ -3,15 +3,28 @@
 
 var i,j,k,playlistNo;
 
+const fs = require('fs');
 
 //json
 const songList= require('./songList.json');
-// console.log(songList);
 
 //infos that wont change
 
 const noOfSongs = songList.length;
 const noOfPlayElements = 12;
+
+
+// test here
+
+const stringSongList = JSON.stringify(songList);
+
+fs.writeFile("./songListMod.json", stringSongList);
+
+
+
+
+
+
 
 // playlist
 
@@ -40,6 +53,7 @@ const songChange = function(port,songNo,imgClass,songNameClass){
         document.getElementsByClassName(imgClass)[port].src = songList[songNo].icon;
         nameElement.innerHTML = songList[songNo].name;
         return songList[songNo].src;
+
 }
 
 
@@ -66,6 +80,8 @@ document.addEventListener("DOMContentLoaded",function(){
     songLoaded_feed[i]=songSelection(i,songLoaded_feed);
     feedSongArr[i]=songChange(i,songLoaded_feed[i],'feed_song_image','feed_song_name');
     }
+    console.log(songLoaded_feed);
+
 });
 
 

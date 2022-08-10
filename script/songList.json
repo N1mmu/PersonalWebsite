@@ -138,6 +138,36 @@
                     "artist": ["XXXTentacion"],
                     "language": "english",
                     "recomendation": 1
+                },
+                {
+                    "song_id": 15,
+                    "name": "Way back home",
+                    "src": "gfx/Musics/Way back home.mp3",
+                    "icon": "gfx/music icons/Way back home.jpg",
+                    "genre": "kpop",
+                    "artist": ["Shaun"],
+                    "language": "korean",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 16,
+                    "name": "Memories",
+                    "src": "gfx/Musics/Memories.mp3",
+                    "icon": "gfx/music icons/Memories.jpg",
+                    "genre": "pop",
+                    "artist": ["Maroon 5"],
+                    "language": "english",
+                    "recomendation": 1
+                },
+                {
+                    "song_id": 17,
+                    "name": "Stay with me",
+                    "src": "gfx/Musics/Stay with me.mp3",
+                    "icon": "gfx/music icons/Stay with me.jpg",
+                    "genre": "kpop",
+                    "artist": ["Chanyeol","EXO"],
+                    "language": "korean",
+                    "recomendation": 1
                 }
                 
 ]
